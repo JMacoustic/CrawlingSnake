@@ -247,3 +247,88 @@ class Cylinder(model.Model):
     def move(self, moveMat):
         self.movement = moveMat @ self.movement
         self.matrix = self.movement @ self.deformation
+
+class Tripillar(model.Model):
+    def __init__(self, width=1.0, height=1.0, depth=1.0, color=(1.0, 1.0, 1.0, 1.0),
+                 material=None, batch=None, group=None, program=None):
+        self._width = width
+        self._height = height
+        self._depth = depth
+        self._color = color
+        self.deformation = Mat4()
+        self.movement = Mat4()
+
+        self._batch = batch
+        self._program = program if program else model.get_default_shader()
+
+        # Create a Material and Group for the Model
+        self._material = material if material else model.SimpleMaterial(name="triangular_pillar")
+        self._group = pyglet.model.MaterialGroup(material=self._material, program=self._program, parent=group)
+
+        self._vlist = self._create_vertexlist()
+
+        super().__init__([self._vlist], [self._group], self._batch)
+
+    def _create_vertexlist(self):
+        w = self._width  # Base width (hypotenuse side)
+        h = self._height  # Triangle height
+        d = self._depth / 2  # Half-depth for centering
+
+        # Define the vertices for a triangular prism
+        vertices = [
+            0, 0, -d,   # Bottom-left front  (0)
+            w, 0, -d,   # Bottom-right front (1)
+            0, h, -d,   # Top-left front     (2)
+
+            0, 0, d,    # Bottom-left back   (3)
+            w, 0, d,    # Bottom-right back  (4)
+            0, h, d,    # Top-left back      (5)
+
+            0, 0, -d,
+            w, 0, -d,
+            w, 0, d,
+            0, 0, d,
+
+            w, 0, d,
+            w, 0, -d,
+            0, h, -d,
+            0, h, d,
+
+            0, h, d,
+            0, h, -d,
+            0, 0, -d,
+            0, 0, d
+        ]
+
+        normals = [0, 0, -1] * 3 + [0, 0, 1] * 3 + [0, -1, 0] * 4 + [1, 1, 0] * 4 + [-1, 0, 0]*4
+
+        indices = [
+            # Front face
+            0, 1, 2,
+            3, 4, 5,
+            
+            # Bottom face
+            0, 1, 4, 0, 4, 3,
+            
+            # Right face
+            1, 2, 5, 1, 5, 4,
+            
+            # Left face
+            2, 0, 3, 2, 3, 5,
+            
+
+        ]
+
+        return self._program.vertex_list_indexed(len(vertices) // 3, pyglet.gl.GL_TRIANGLES, indices,
+                                                 batch=self._batch, group=self._group,
+                                                 POSITION=('f', vertices),
+                                                 NORMAL=('f', normals),
+                                                 COLOR_0=('f', self._color * (len(vertices) // 3)))
+    def deform(self, deformMat):
+        self.deformation = self.deformation @ deformMat
+        self.matrix = self.movement @ self.deformation
+
+    def move(self, moveMat):
+        self.movement = moveMat @ self.movement
+        self.matrix = self.movement @ self.deformation
+

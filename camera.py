@@ -16,7 +16,7 @@ height, width    = 0, 0
 curquat    = [1,0,0,0]
 lastquat   = [1,0,0,0]
 tx, ty, tz = 0.0, 0.0, 0.0
-dolly      = 5.0
+dolly      = 10.0
 
 TRACKBALLSIZE = 0.6
 
