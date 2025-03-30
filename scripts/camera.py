@@ -13,10 +13,10 @@ farPlane    = 10000.0
 beginu, beginv   = 0, 0
 height, width    = 0, 0
 
-curquat    = [1,0,0,0]
+curquat    = [-0.36315166267487914, -0.2656206482393097, 0.48607924457270246, 0.7491952409893102]
 lastquat   = [1,0,0,0]
 tx, ty, tz = 0.0, 0.0, 0.0
-dolly      = 10.0
+dolly      = 8.0
 
 TRACKBALLSIZE = 0.6
 

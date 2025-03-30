@@ -1,5 +1,6 @@
-import geometry
+from scripts import geometry
 from pyglet.math import Mat4, Vec3
+from math import pi
 
 class Snake:
     "this class generate body shapes of a snake components, and link them in hierarchy."
@@ -94,7 +95,9 @@ class Snake:
         self.set_orientation(self.default_angles)
 
     def set_orientation(self, angles):
-        self.body1.movement = angles["wb1"]
+        self.body1.movement = Mat4()
+        self.body1.move(Mat4.from_rotation(angle = 0.5*pi, vector=Vec3(0, 0, 1)))
+        self.body1.move(angles["wb1"])
 
         self.neck1.movement = Mat4()
         self.neck1.move(Mat4.from_rotation(angle=angles["b1n1"][0], vector=Vec3(1, 0, 0)))

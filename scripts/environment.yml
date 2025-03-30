@@ -1,4 +1,4 @@
-name: snake_env
+name: snu_graphics
 channels:
   - defaults
 dependencies:

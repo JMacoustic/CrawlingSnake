@@ -1,9 +1,33 @@
-> 📌 **This repository originated from** [here](https://github.com/IntelligentMOtionlab/SNU_ComputerGraphics).
+# Crawling Snake Model
+This is a hierarchy snake model implemented using pyglet, by Mechanical engineer student in SNU, as a homework. Camera codes and basic skeletons are referenced from [SNU_ComputerGraphics](https://github.com/SNU-IntelligentMotionLab/SNU_ComputerGraphics_).
 
->🔹 The content is **identical** to the original repository.
+## Requirements
 
-# Requirements
+This code uses [Pyglet](https://github.com/pyglet/pyglet) which is a cross-platform windowing library under Python 3.8+. 
+Supported platforms are:
 
-This code uses [Pyglet](https://github.com/pyglet/pyglet) which is a cross-platform windowing library under Python 3.8
+* Windows 7 or later
+* Mac OS X 10.3 or later
+* Linux, with the following libraries (most recent distributions will have these in a default installation):
 
-Required packages are included in environments.yml
+## Installation
+
+First, download miniconda(recommended) or anaconda
+- **[Download Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install)**
+- [Download Anaconda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
+
+Second, clone repository
+
+    git clone https://github.com/JMacoustic/CrawlingSnake.git
+
+Finally, go into the cloned repo and create environment
+    
+    cd path/to/cloned/repo/
+    conda env create -f environment.yml
+
+## Run
+
+Now, simply activate conda environment and run the code
+
+    conda activate snake_env
+    python main.py

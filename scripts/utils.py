@@ -17,3 +17,4 @@ class EventWatcher:
 		self.lowerhead = False
 		self.attack = False
 		self.waitattack = False
+		self.moving = False

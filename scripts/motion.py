@@ -1,5 +1,6 @@
 from math import pi, sin, cos
-from pyglet.math import Mat4
+from pyglet.math import Mat4, Vec3
+
 
 def sinwaveSnake(current_t, phase, height, width, frequency):
     a = []
@@ -8,9 +9,9 @@ def sinwaveSnake(current_t, phase, height, width, frequency):
     
     wave_angles = { # format:[bend, tilt]
         "wb1" : Mat4(),
-        "b1n1" : [0, 0], # body1 > neck1  
-        "n1n2" : [0, 0], # neck1 > neck2
-        "n2n3" : [0, 0], # neck2 > neck3
+        "b1n1" : [0.02*pi, 0], # body1 > neck1  
+        "n1n2" : [0.02*pi, 0], # neck1 > neck2
+        "n2n3" : [-0.05*pi, 0], # neck2 > neck3
         "n3h" : [0, 0], # neck3 > head
         "hj" : [0, 0], # neck3 > jaw
         "b1b2" : [0, a[3]], # body1 > body2
@@ -90,11 +91,11 @@ def interpolation(angles1, angles2, p):
 
 attack_angles = { # format:[bend, tilt]
     "wb1" : Mat4(),
-    "b1n1" : [0.15*pi, 0], # body1 > neck1  
+    "b1n1" : [0.2*pi, 0], # body1 > neck1  
     "n1n2" : [-0.2*pi, 0], # neck1 > neck2
     "n2n3" : [-0.2*pi, 0], # neck2 > neck3
     "n3h" : [-0.1*pi, 0], # neck3 > head
-    "hj" : [0, 0], # neck3 > jaw
+    "hj" : [0.1*pi, 0], # neck3 > jaw
     "b1b2" : [0, 0], # body1 > body2
     "b2b3" : [0, 0], # body2 > body3
     "b3b4" : [0, 0], # body3 > body4
