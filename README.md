@@ -31,3 +31,16 @@ Now, simply activate conda environment and run the code
 
     conda activate snake_env
     python main.py
+
+## How to play
+
+1. Keyboard controls. You can press multiple buttons together. Some will work, some won't. Test it out!
+    - key 1: start moving. sorry but you cannot change direction
+    - key 2: stop moving.
+    - key 3: raise head
+    - key 4: attack!! you cannot attack if the head is not raised yet
+    - key 5: lower head
+
+2. Mouse controls.
+    - Grab-and-Drag: change the view by trackball viewer. It should be intuitive.
+    - Scroll: zoom in and out
