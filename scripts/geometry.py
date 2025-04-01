@@ -1,10 +1,10 @@
+# This code is originated from pyglet basic shapes and I added more functionalities such as deform and move
+
 import pyglet
 from pyglet import model
-from math import pi, sin, cos, tan
-from pyglet.math import Mat4, Vec3
+from math import pi, sin, cos
+from pyglet.math import Mat4
 
-# class JointGroup(model.Group):
-#     def __init__(self, )
 
 def projective_scale(cls: type[Mat4], x_scale = 1.0, y_scale =1.0, z_scale=1.0, taper = 0.1, correction = 0.4) -> Mat4:
     """Create a Mat4 projection matrix with a shear effect to form a truncated square pyramid."""

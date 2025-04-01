@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+# Source: https://github.com/snumrl/TrackballViewer/blob/main/camera.py
+# This script is adapted from the above repository.
 
-import pyglet
+
 from pyglet.gl import *
 from pyglet.math import Mat4, Vec3, Quaternion
 
-import sys, math
+import math
 
 aspectRatio = 1.0
 nearPlane   = 0.1

@@ -1,3 +1,6 @@
+# Source: https://github.com/SNU-IntelligentMotionLab/SNU_ComputerGraphics_/blob/main/main.py
+# This script is based on above repository and adjusted for additional functionalities
+
 import pyglet 
 from scripts import camera, motion, utils
 from scripts.snakemodel import Snake

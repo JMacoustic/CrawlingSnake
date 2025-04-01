@@ -121,7 +121,7 @@ raisehead_angles = { # format:[bend, tilt]
     "b3b4" : [0, 0], # body3 > body4
     "b4b5" : [0, 0], # body4 > body5
     "b5t" : [0, 0],  # body5 > tail   \
-    "n1wL" : -0.05*pi, # neck1 > wingL
+    "n1wL" : -0.05*pi, # neck1 > wingL 
     "n1wR" : -0.05*pi, # neck1 > wingR
     "n2wL" : -0.05*pi, # neck2 > wingL
     "n2wR" : -0.05*pi, # neck2 > wingR
@@ -150,7 +150,7 @@ rest_angles = { # format:[bend, tilt]
 }
 
 null_angles = { # format:[bend, tilt]
-    "wb1" : Mat4(),
+    "wb1" : Mat4(), 
     "b1n1" : [0, 0], # body1 > neck1  
     "n1n2" : [0, 0], # neck1 > neck2
     "n2n3" : [0, 0], # neck2 > neck3
