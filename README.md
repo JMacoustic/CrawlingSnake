@@ -8,7 +8,7 @@ Supported platforms are:
 
 * Windows 7 or later
 * Mac OS X 10.3 or later
-* Linux, with the following libraries (most recent distributions will have these in a default installation):
+* Linux
 
 ## Installation
 
